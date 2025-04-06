@@ -78,9 +78,7 @@ struct STR{
 //         return a.hp>b.hp;
 //     }
 // };
-bool cmp(STR a,STR b){
-    return a.x>b.x;
-}
+
 
 
 
