@@ -85,7 +85,7 @@ bool cmp(STR a,STR b){
 }
 
 
-
+//使用贪心思想，用map判断有多少只有一个连接的端点，然后输出（端点数-端点数/2）即可
 void solve(){
     ll n;
     cin>>n;
