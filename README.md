@@ -1,3 +1,5 @@
+//题目地址https://codeforces.com/problemset/problem/1905/B
+本题难度1100（贪心，树形结构）
 #include<bits/stdc++.h>
 #include<stdlib.h>
 #include<string>
