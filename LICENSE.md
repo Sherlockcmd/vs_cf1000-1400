@@ -66,18 +66,6 @@ struct STR{
     ll x=0,id;
 }str[N];
 
-// struct cmp
-// {
-//     bool operator()(STR a,STR b){
-//         if(a.hp==b.hp){
-//             if(a.k==b.k){
-//                 return a.id>b.id;
-//             }
-//             else return a.k>b.k;
-//         }
-//         return a.hp>b.hp;
-//     }
-// };
 
 
 
