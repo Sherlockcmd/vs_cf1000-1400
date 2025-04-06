@@ -24,7 +24,7 @@ const int mod=1e9+7;
 ll a[N]={0},b[N]={0},c[N]={0},d[N]={0};
 
 
-// priority_queue<ll>q1;
+//priority_queue<ll>q;//大
 //priority_queue<int,vector<int>,greater<int> >q;//小
 
 map<ll,ll>mp; map<ll,ll>mp1;map<int,vector<int>>mp2;
@@ -78,67 +78,28 @@ struct STR{
 //         return a.hp>b.hp;
 //     }
 // };
-
+bool cmp(STR a,STR b){
+    return a.x>b.x;
+}
 
 
 
 void solve(){
-    ll n,num1=0,sum=0,flag1=0,num2=0,maxx=0,num3=0;
+    ll n;
     cin>>n;
-    for(int i=1;i<=n;i++){
-        cin>>a[i];
-        b[i]=a[i];
-        mp[a[i]]++;
-        mp1[a[i]]=i;
+    for(int i=1;i<n;i++){
+        ll x,y;
+        cin>>x>>y;
+        mp[x]++;
+        mp[y]++;
     }
-    for(int i=1;i<=n;i++){
-        if(a[i]==0){
-            num2=i-1;
-            break;
-        }
+    ll num=0;
+    for(auto it:mp){
+       if(it.se==1){
+        num++;
+       }
     }
-    ll num=n-mp1[1];
-    if(mp[0]-1-num2>=mp[1]-1-num){
-        for(int i=1;i<=n;i++){
-            if(a[i]==0){
-                if(flag1==0){
-                 a[i]=1;
-                 flag1=1;
-                }
-                else{
-                sum+=num1;
-                }
-             }
-            if(a[i]==1){
-                num1++;
-            }
-            if(b[i]==0){
-                maxx+=num3;
-            }
-            else{
-                num3++;
-            }
-        }
-    }
-    else{
-        a[mp1[1]]=0;
-        for(int i=1;i<=n;i++){
-            if(a[i]==0){
-                sum+=num1;
-             }
-            if(a[i]==1){
-                num1++;
-            }
-        
-        if(b[i]==0){
-            maxx+=num3;
-        }
-        else{
-            num3++;
-        }
-    }
-    }
-    cout<<max(maxx,sum)<<endl;
+    cout<<num-(num/2)<<endl;
      return;
 }
 
